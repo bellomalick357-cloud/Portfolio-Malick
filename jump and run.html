@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jump and Run | H.PORTFOLIO</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #000000;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    video {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #1c1c1e;
+    }
+
+    .navbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .back-link {
+      font-size: 13px;
+      font-weight: 700;
+      color: #8e8e93;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .back-link:hover {
+      color: #1e62ec;
+      transform: translateX(-2px);
+    }
+
+    .page {
+      padding: 30px 0 70px;
+    }
+
+    .hero-card {
+      overflow: hidden;
+      border: 1px solid #1c1c1e;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #131313 0%, #0c0c0c 100%);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-media {
+      position: relative;
+      height: 540px;
+      overflow: hidden;
+      background: #101010;
+    }
+
+    .hero-media img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.76) 100%);
+    }
+
+    .hero-content {
+      padding: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(30, 98, 236, 0.25);
+      border-radius: 999px;
+      background: rgba(30, 98, 236, 0.10);
+      color: #8bb0ff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 44px;
+      line-height: 1.03;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      color: #c9c9ce;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      border: 1px solid #1c1c1e;
+      background: #121212;
+      color: #d7d7dc;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.2px;
+    }
+
+    .chip.accent {
+      border-color: rgba(30, 98, 236, 0.28);
+      background: rgba(30, 98, 236, 0.10);
+      color: #8bb0ff;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .panel {
+      background: #121212;
+      border: 1px solid #1c1c1e;
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .panel-title {
+      font-size: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.2px;
+    }
+
+    .panel p {
+      color: #c8c8ce;
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding-top: 12px;
+      border-top: 1px solid #1c1c1e;
+      color: #d7d7dc;
+      font-size: 14px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 6px;
+      border-radius: 50%;
+      background: #1e62ec;
+      flex: 0 0 auto;
+      box-shadow: 0 0 10px rgba(30, 98, 236, 0.45);
+    }
+
+    .video-box {
+      overflow: hidden;
+      border: 1px solid #1c1c1e;
+      border-radius: 18px;
+      background: #0f0f0f;
+    }
+
+    .video-box video {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #000000;
+    }
+
+    .video-caption {
+      padding: 16px 18px 18px;
+      color: #8e8e93;
+      font-size: 14px;
+      border-top: 1px solid #1c1c1e;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .shot {
+      height: 210px;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid #1c1c1e;
+      background: #141414;
+    }
+
+    .shot img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .shot:hover img {
+      transform: scale(1.04);
+    }
+
+    .side-grid {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .info-card {
+      padding: 18px;
+      border: 1px solid #1c1c1e;
+      border-radius: 16px;
+      background: #101010;
+    }
+
+    .info-label {
+      color: #8e8e93;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .info-value {
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .button.primary {
+      background: #1e62ec;
+      color: #ffffff;
+      border: 1px solid #1e62ec;
+    }
+
+    .button.primary:hover {
+      background: #2a71ff;
+      transform: translateY(-2px);
+    }
+
+    .button.secondary {
+      background: #121212;
+      color: #ffffff;
+      border: 1px solid #2a2a2d;
+    }
+
+    .button.secondary:hover {
+      border-color: #1e62ec;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      border-top: 1px solid #1c1c1e;
+      padding: 24px 0 34px;
+      color: #8e8e93;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      color: #d7d7dc;
+      transition: color 0.25s ease;
+    }
+
+    .footer-links a:hover {
+      color: #1e62ec;
+    }
+
+    @media (max-width: 1080px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .side-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .hero-media {
+        height: 320px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .gallery,
+      .side-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .shot {
+        height: 220px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="logo">PORTFOLIO</div>
+      <a class="back-link" href="index.html">← Retour au portfolio</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <section class="hero-card">
+        <div class="hero-media">
+          <img src="media/icon2.JPG" alt="Capture principale du projet Jump and Run">
+          <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+          <div class="eyebrow">Projet personnel · Unreal Engine 5</div>
+          <h1>Jump and Run</h1>
+          <p class="subtitle">
+            Prototype de jeu de plateforme développé pour explorer les fondamentaux du gameplay,
+            du déplacement du personnage, des collisions et de la collecte d’objets dans un univers
+            simple, lisible et dynamique.
+          </p>
+
+          <div class="chips">
+            <span class="chip accent">UE5</span>
+            <span class="chip">Blueprint</span>
+            <span class="chip">Gameplay Programming</span>
+            <span class="chip">Character Movement</span>
+            <span class="chip">Level Design</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="stack">
+          <article class="panel">
+            <h2 class="panel-title">Description du projet</h2>
+            <p>
+              Jump and Run est un prototype de jeu de plateforme conçu sous Unreal Engine 5 afin de
+              travailler une boucle de gameplay simple et efficace. Le joueur doit avancer, sauter,
+              éviter les obstacles et récupérer des éléments tout au long du parcours.
+            </p>
+            <p>
+              Ce projet m’a permis d’améliorer la fluidité du déplacement, le ressenti du saut, la
+              gestion des collisions et la mise en scène d’un niveau jouable avec une direction
+              visuelle claire.
+            </p>
+
+            <h2 class="panel-title" style="margin-top: 24px;">Fonctionnalités développées</h2>
+            <ul class="feature-list">
+              <li><span class="dot"></span><span>Système de déplacement du personnage avec course et saut.</span></li>
+              <li><span class="dot"></span><span>Collecte d’objets et logique de score.</span></li>
+              <li><span class="dot"></span><span>Placement des obstacles et rythme de progression.</span></li>
+              <li><span class="dot"></span><span>Travail sur la lisibilité des actions et la sensation de contrôle.</span></li>
+            </ul>
+
+            <div class="actions">
+              <a class="button primary" href="index.html">Retour au portfolio</a>
+              <a class="button secondary" href="#video">Voir la vidéo</a>
+            </div>
+          </article>
+
+          <article class="panel" id="video">
+            <h2 class="panel-title">Gameplay Video</h2>
+            <div class="video-box">
+              <video controls preload="metadata" poster="images/jump-and-run-thumbnail.jpg">
+                <source src="media/jump and run.mp4" type="video/mp4" />
+                Votre navigateur ne prend pas en charge la lecture vidéo.
+              </video>
+              <div class="video-caption">
+                Démonstration du gameplay, du saut, des collisions et du déroulement général du prototype.
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h2 class="panel-title">Galerie</h2>
+            <div class="gallery">
+              <div class="shot">
+                <img src="media/jump and run start.JPG" alt="Capture de Jump and Run 1">
+              </div>
+              <div class="shot">
+                <img src="media/jump and run.JPG" alt="Capture de Jump and Run 2">
+              </div>
+              <div class="shot">
+                <img src="media/jump and run1.JPG" alt="Capture de Jump and Run 3">
+              </div>
+              <div class="shot">
+                <img src="media/jump and run character.JPG" alt="Capture de Jump and Run 4">
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="side-grid">
+          <div class="info-card">
+            <div class="info-label">Statut</div>
+            <div class="info-value">Prototype en développement</div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-label">Moteur</div>
+            <div class="info-value">Unreal Engine 5</div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-label">Technique</div>
+            <div class="info-value">Blueprint · Gameplay Logic</div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-label">Objectif</div>
+            <div class="info-value">Créer un prototype fluide et agréable à jouer</div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-label">Type de projet</div>
+            <div class="info-value">Plateformer / Jump & Run</div>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 PORTFOLIO — Jump and Run</div>
+      <div class="footer-links">
+        <a href="https://www.artstation.com/">ArtStation</a>
+        <a href="https://www.linkedin.com/">LinkedIn</a>
+        <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

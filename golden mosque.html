@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Mosque | H.PORTFOLIO</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1250px;margin:auto;padding:0 24px;}
+header{position:sticky;top:0;background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1c1c1e;}
+.navbar{height:72px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-weight:800;letter-spacing:2px;font-size:14px;}
+.back{color:#8e8e93;font-size:13px;font-weight:700;}
+.back:hover{color:#1e62ec;}
+.hero{padding:30px 0;}
+.hero-card{background:#111;border:1px solid #1c1c1e;border-radius:24px;overflow:hidden;}
+.hero-image{height:560px;}
+.hero-image img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-content{padding:30px;}
+.label{color:#1e62ec;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+h1{font-size:50px;margin-bottom:10px;}
+.subtitle{color:#bdbdc2;font-size:16px;max-width:800px;margin-bottom:20px;}
+.tags{display:flex;flex-wrap:wrap;gap:10px;}
+.tag{padding:8px 12px;border-radius:999px;background:#121212;border:1px solid #1c1c1e;font-size:12px;font-weight:700;}
+.tag-blue{background:rgba(30,98,236,.12);border:1px solid rgba(30,98,236,.3);color:#8fb4ff;}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:24px;padding-bottom:60px;}
+.panel{background:#111;border:1px solid #1c1c1e;border-radius:20px;padding:24px;margin-bottom:24px;}
+.panel h2{margin-bottom:16px;}
+.panel p{color:#d0d0d5;margin-bottom:14px;}
+.list{list-style:none;}
+.list li{padding:14px 0;border-top:1px solid #1c1c1e;color:#d0d0d5;}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.gallery img{width:100%;height:230px;object-fit:cover;border-radius:14px;border:1px solid #1c1c1e;}
+.info{background:#101010;border:1px solid #1c1c1e;border-radius:16px;padding:18px;margin-bottom:16px;}
+.info-title{font-size:11px;letter-spacing:2px;color:#8e8e93;font-weight:800;text-transform:uppercase;margin-bottom:8px;}
+.info-value{font-size:15px;font-weight:700;}
+.button{display:inline-block;background:#1e62ec;padding:14px 20px;border-radius:12px;font-weight:800;color:#fff;margin-top:12px;}
+footer{border-top:1px solid #1c1c1e;padding:28px 0;color:#8e8e93;}
+.footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.links{display:flex;gap:14px;}
+.links a:hover{color:#1e62ec;}
+@media(max-width:900px){
+.grid{grid-template-columns:1fr;}
+.hero-image{height:320px;}
+h1{font-size:36px;}
+.gallery{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container navbar">
+<div class="logo">PORTFOLIO</div>
+<a href="index.html" class="back">← Retour au portfolio</a>
+</div>
+</header>
+
+<main class="container">
+<section class="hero">
+<div class="hero-card">
+<div class="hero-image">
+<img src="media/mosq.JPG" alt="Golden Mosque">
+</div>
+<div class="hero-content">
+<div class="label">Projet personnel • Blender 5.1</div>
+<h1>Golden Mosque</h1>
+<p class="subtitle">
+Projet de modélisation architecturale réalisé sous Blender. L'objectif était de créer une mosquée élégante inspirée de l'architecture islamique afin de développer mes compétences en modélisation, matériaux, éclairage et rendu.
+</p>
+<div class="tags">
+<div class="tag tag-blue">Blender 5.1</div>
+<div class="tag">Architecture</div>
+<div class="tag">3D Modeling</div>
+<div class="tag">Lighting</div>
+<div class="tag">Rendering</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="grid">
+<div>
+<div class="panel">
+<h2>Description du projet</h2>
+<p>
+Golden Mosque est un projet architectural réalisé dans Blender dans le but de reproduire un bâtiment inspiré des mosquées monumentales. Une attention particulière a été portée aux proportions, aux détails décoratifs et à l'ambiance générale de la scène.
+</p>
+<p>
+Ce projet m'a permis d'améliorer ma maîtrise du workflow Blender, du blocking initial jusqu'au rendu final, en passant par la création des matériaux et la gestion de l'éclairage.
+</p>
+</div>
+
+<div class="panel">
+<h2>Compétences développées</h2>
+<ul class="list">
+<li>Modélisation architecturale 3D.</li>
+<li>Création et ajustement de matériaux.</li>
+<li>Travail sur les détails et ornements.</li>
+<li>Éclairage et composition visuelle.</li>
+<li>Production d'images de présentation.</li>
+</ul>
+<a href="index.html" class="button">Retour au portfolio</a>
+</div>
+
+<div class="panel">
+<h2>Galerie</h2>
+<div class="gallery">
+<img src="media/mosq2.JPG" alt="Vue 1">
+<img src="media/mosq3.JPG" alt="Vue 2">
+<img src="media/mosq1.JPG" alt="Vue 3">
+<img src="media/mosq.JPG" alt="Vue 4">
+</div>
+</div>
+</div>
+
+<aside>
+<div class="info">
+<div class="info-title">Statut</div>
+<div class="info-value">Projet terminé</div>
+</div>
+<div class="info">
+<div class="info-title">Logiciel</div>
+<div class="info-value">Blender 5.1</div>
+</div>
+<div class="info">
+<div class="info-title">Catégorie</div>
+<div class="info-value">Architecture 3D</div>
+</div>
+<div class="info">
+<div class="info-title">Objectif</div>
+<div class="info-value">Développer des compétences solides en ArchViz et modélisation.</div>
+</div>
+<div class="info">
+<div class="info-title">Mon rôle</div>
+<div class="info-value">Modélisation, matériaux, éclairage et rendu final.</div>
+</div>
+</aside>
+</section>
+</main>
+
+<footer>
+<div class="container footer">
+<div>© 2026 H.PORTFOLIO — Golden Mosque</div>
+<div class="links">
+<a href="#">ArtStation</a>
+<a href="#">LinkedIn</a>
+<a href="#">GitHub</a>
+</div>
+</div>
+</footer>
+</body>
+</html>
